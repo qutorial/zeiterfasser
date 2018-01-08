@@ -42,7 +42,9 @@ class AtOnceController < ApplicationController
         end
       end
       render json: {status: 200}
-    rescue
+    rescue => e
+      logger.error "Error when processing JSON from the JS app:"
+      logger.error e.message
       render json: {status: 400, error: "Badly formatted request body"}
     end
   end

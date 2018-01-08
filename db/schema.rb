@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108132241) do
+ActiveRecord::Schema.define(version: 20180108152241) do
 
   create_table "eintrags", force: :cascade do |t|
     t.integer "kosten_traeger_id"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20180108132241) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["code", "name"], name: "index_kosten_traegers_on_code_and_name", unique: true
+    t.index ["code"], name: "index_kosten_traegers_on_code", unique: true
   end
 
   create_table "users", force: :cascade do |t|
