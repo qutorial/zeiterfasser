@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount_devise_token_auth_for 'User', at: 'auth'
 
   authenticate :user do
@@ -19,8 +20,6 @@ Rails.application.routes.draw do
     end
   end
   
-  devise_for :users
-
   root to: 'static#home'
 
   get 'noscript', to: 'static#noscript'
