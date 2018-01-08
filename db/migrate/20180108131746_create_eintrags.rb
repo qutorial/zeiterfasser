@@ -1,7 +1,7 @@
 class CreateEintrags < ActiveRecord::Migration[5.1]
   def change
 
-    drop_table :eintrags
+    drop_table :eintrags if ActiveRecord::Base.connection.table_exists? 'eintrags'
 
     create_table :eintrags do |t|
       t.references :kosten_traeger, foreign_key: true
