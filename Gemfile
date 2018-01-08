@@ -28,6 +28,9 @@ gem 'jquery-turbolinks'
 gem 'devise'
 # eliminates easy passwords
 gem 'devise_zxcvbn'
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'rack-cors'
 
 # Bootstrap
 gem 'bootstrap-sass'
