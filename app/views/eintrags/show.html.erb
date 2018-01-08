@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kosten traeger:</strong>
+  <%= @eintrag.kosten_traeger %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @eintrag.duration %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @eintrag.date %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @eintrag.comment %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @eintrag.user %>
+</p>
+
+<%= link_to 'Edit', edit_eintrag_path(@eintrag) %> |
+<%= link_to 'Back', eintrags_path %>

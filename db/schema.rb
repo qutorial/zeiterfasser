@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702143445) do
+ActiveRecord::Schema.define(version: 20180108132241) do
+
+  create_table "eintrags", force: :cascade do |t|
+    t.integer "kosten_traeger_id"
+    t.integer "duration"
+    t.date "date"
+    t.string "comment"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kosten_traeger_id"], name: "index_eintrags_on_kosten_traeger_id"
+    t.index ["user_id", "kosten_traeger_id", "date"], name: "index_eintrags_on_user_id_and_kosten_traeger_id_and_date", unique: true
+    t.index ["user_id"], name: "index_eintrags_on_user_id"
+  end
+
+  create_table "kosten_traegers", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

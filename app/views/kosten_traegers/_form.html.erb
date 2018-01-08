@@ -1,0 +1,27 @@
+<%= form_with(model: kosten_traeger, local: true) do |form| %>
+  <% if kosten_traeger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kosten_traeger.errors.count, "error") %> prohibited this kosten_traeger from being saved:</h2>
+
+      <ul>
+      <% kosten_traeger.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code, id: :kosten_traeger_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :kosten_traeger_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
