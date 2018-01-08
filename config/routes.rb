@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   authenticate :user do
     scope '/api' do
       scope '/v1' do
-        resources :kosten_traegers
-        resources :eintrags
+        resources :kosten_traegers, only: [:index, :show]
+#        resources :eintrags, only: [:index, :show, :update, :edit]
         scope '/eintrags' do
           post 'atonce', to: 'at_once#atonce'
         end

@@ -22,7 +22,7 @@ class AtOnceController < ApplicationController
           eintr = Eintrag.where(kosten_traeger: kosttr, date: date).first
 
           if eintr.nil?
-            eintr = Eintrag.create!(kosten_traeger: kosttr, date: date, user: User.first)
+            eintr = Eintrag.create!(kosten_traeger: kosttr, date: date, user: current_user)
           end
 
           eintr.duration = duration
