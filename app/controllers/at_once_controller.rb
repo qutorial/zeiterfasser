@@ -1,4 +1,4 @@
-class AtOnceController < ApplicationController
+class AtOnceController < AuthController
 
   def atonce
     begin

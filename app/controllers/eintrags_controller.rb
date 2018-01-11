@@ -1,4 +1,4 @@
-class EintragsController < ApplicationController
+class EintragsController < AuthController
   before_action :set_eintrag, only: [:show, :edit, :update, :destroy]
 
   # GET /eintrags

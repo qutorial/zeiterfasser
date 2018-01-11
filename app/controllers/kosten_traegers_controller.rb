@@ -1,4 +1,4 @@
-class KostenTraegersController < ApplicationController
+class KostenTraegersController < AuthController
   before_action :set_kosten_traeger, only: [:show, :edit, :update, :destroy]
 
   # GET /kosten_traegers
